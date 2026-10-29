@@ -15,7 +15,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 2. Car data (adjustment catalog, parts, baselines, rules, tracks)
 - [x] 3. Scales math
 - [x] 4. Handling model + manual rule tests
-- [ ] 5. Lap time + driver feedback
+- [x] 5. Lap time + driver feedback
 - [ ] 6. Track evolution
 - [ ] 7. Sandbox UI
 - [ ] 8. Race night
@@ -30,3 +30,4 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
   (about 110 manual rules). Manual contradictions resolved: LR weight vs entry follows the tables on
   pp. 41-42 (more LR = tighter entry); "LR rebound in apex off" appears in both tight and loose lists, so it is
   left out of the apex-off phase.
+- Lap time: src/sim/laptime.ts, driver talk: src/sim/driver.ts. The BRP baseline goes loose as the track slicks off (by design: the trainee has to react).
