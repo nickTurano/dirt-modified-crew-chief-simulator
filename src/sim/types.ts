@@ -210,3 +210,34 @@ export interface RulesDef {
   featureCars: number;
   cockpitAdjustersAllowed: boolean;
 }
+
+/** The racing surface right now. Stage 6 evolves this through the night. */
+export interface TrackState {
+  /** 0 = bone dry, 1 = heavy / wet */
+  moisture: number;
+  /** black rubbered-up line, 0..1 */
+  rubber: number;
+  /** loose dirt built up on top, 0..1 */
+  cushion: number;
+  /** ruts and holes, 0..1 */
+  roughness: number;
+  /** track surface temperature, F */
+  surfaceTempF: number;
+}
+
+export type Phase = 'entry' | 'apexOff' | 'apexOn' | 'exit';
+export const PHASES: Phase[] = ['entry', 'apexOff', 'apexOn', 'exit'];
+export const PHASE_LABELS: Record<Phase, string> = {
+  entry: 'Corner entry',
+  apexOff: 'Apex, off throttle',
+  apexOn: 'Apex, on throttle',
+  exit: 'Corner exit',
+};
+
+/** Hidden mechanical problems a crew chief has to find, not tune around (manual p. 39) */
+export type Fault =
+  | 'rf-top-radius-rod-bind'
+  | 'lr-shock-bent-shaft'
+  | 'torque-arm-slider-dry'
+  | 'rr-shock-bottoming'
+  | 'rear-end-hitting-seat';

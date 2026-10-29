@@ -14,7 +14,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 1. Scaffold (Vite + React + TS, Vitest)
 - [x] 2. Car data (adjustment catalog, parts, baselines, rules, tracks)
 - [x] 3. Scales math
-- [ ] 4. Handling model + manual rule tests
+- [x] 4. Handling model + manual rule tests
 - [ ] 5. Lap time + driver feedback
 - [ ] 6. Track evolution
 - [ ] 7. Sandbox UI
@@ -26,3 +26,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - Work happens on branch `claude/build-simulator` (PR into main).
 - Switching rearConfig/panhardSide must re-normalize hole fields (long rod has 3 radius rod holes,
   short rod 5; left panhard plate 4 holes, right 9). Do this in the store (stage 7).
+- Handling model: src/sim/handling.ts (EFFECTS table + gripTerms). Rule tests: src/sim/handling.test.ts
+  (about 110 manual rules). Manual contradictions resolved: LR weight vs entry follows the tables on
+  pp. 41-42 (more LR = tighter entry); "LR rebound in apex off" appears in both tight and loose lists, so it is
+  left out of the apex-off phase.
