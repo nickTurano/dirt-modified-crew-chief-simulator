@@ -151,3 +151,13 @@ h3 { font-size: 14px; margin: 14px 0 6px; }
 .option.wrong, .option.no-effect { border-color: var(--line); color: var(--muted); }
 .option.picked { box-shadow: 0 0 0 2px var(--ink) inset; }
 .verdict { font-size: 13px; color: var(--ink); }
+
+.layout.two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 720px) { .layout.two { grid-template-columns: 1fr; } }
+input:not([type]), input[type='text'], textarea { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; color: var(--ink); font: inherit; width: 100%; }
+.warn-text { color: var(--warn); }
+.help-p { line-height: 1.55; margin: 6px 0 10px; }
+.terms div { border-top: 1px solid var(--line); padding: 8px 0; }
+.terms dt { font-weight: 600; }
+.terms dd { margin: 2px 0 0; color: var(--muted); line-height: 1.45; font-size: 14px; }
+code { font-size: 13px; background: var(--grid); padding: 1px 4px; border-radius: 4px; }

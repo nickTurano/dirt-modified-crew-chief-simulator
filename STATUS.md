@@ -20,7 +20,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 7. Sandbox UI
 - [x] 8. Race night
 - [x] 9. Drills
-- [ ] 10. Polish
+- [x] 10. Polish
 
 ## Notes for the next session
 - Work happens on branch `claude/build-simulator` (PR into main).
