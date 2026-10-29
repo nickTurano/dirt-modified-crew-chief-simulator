@@ -12,7 +12,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 
 ## Stages
 - [x] 1. Scaffold (Vite + React + TS, Vitest)
-- [ ] 2. Car data (adjustment catalog, parts, baselines, rules, tracks)
+- [x] 2. Car data (adjustment catalog, parts, baselines, rules, tracks)
 - [ ] 3. Scales math
 - [ ] 4. Handling model + manual rule tests
 - [ ] 5. Lap time + driver feedback
@@ -23,3 +23,6 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [ ] 10. Polish
 
 ## Notes for the next session
+- Work happens on branch `claude/build-simulator` (PR into main).
+- Switching rearConfig/panhardSide must re-normalize hole fields (long rod has 3 radius rod holes,
+  short rod 5; left panhard plate 4 holes, right 9). Do this in the store (stage 7).
