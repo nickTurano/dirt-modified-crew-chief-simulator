@@ -1,8 +1,36 @@
+import { useSandbox, type Tab } from './store';
+import { Sandbox } from './Sandbox';
+
+const TABS: { id: Tab; label: string }[] = [
+  { id: 'garage', label: 'Sandbox' },
+  { id: 'race', label: 'Race night' },
+  { id: 'drills', label: 'Drills' },
+  { id: 'notebook', label: 'Notebook' },
+  { id: 'help', label: 'Help' },
+];
+
 export function App() {
+  const tab = useSandbox((s) => s.tab);
+  const setTab = useSandbox((s) => s.setTab);
   return (
-    <main className="app">
-      <h1>Crew Chief Simulator</h1>
-      <p>Bicknell big block dirt modified. Under construction, see STATUS.md.</p>
-    </main>
+    <div className="app">
+      <header className="top">
+        <div className="brand">
+          <b>Crew Chief Simulator</b>
+          <span>Bicknell big block modified · coil-over · American Racer</span>
+        </div>
+        <nav>
+          {TABS.map((t) => (
+            <button key={t.id} className={tab === t.id ? 'tab on' : 'tab'} onClick={() => setTab(t.id)}>
+              {t.label}
+            </button>
+          ))}
+        </nav>
+      </header>
+      <main>
+        {tab === 'garage' && <Sandbox />}
+        {tab !== 'garage' && <p className="panel">Coming in a later build stage.</p>}
+      </main>
+    </div>
   );
 }

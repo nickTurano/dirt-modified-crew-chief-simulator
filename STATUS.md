@@ -17,7 +17,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 4. Handling model + manual rule tests
 - [x] 5. Lap time + driver feedback
 - [x] 6. Track evolution
-- [ ] 7. Sandbox UI
+- [x] 7. Sandbox UI
 - [ ] 8. Race night
 - [ ] 9. Drills
 - [ ] 10. Polish
@@ -32,3 +32,4 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
   left out of the apex-off phase.
 - Lap time: src/sim/laptime.ts, driver talk: src/sim/driver.ts. The BRP baseline goes loose as the track slicks off (by design: the trainee has to react).
 - Track evolution: src/sim/evolution.ts (weather presets, advanceTrack by car-laps + minutes, crewPrep, trackReport).
+- UI: src/ui (zustand store in store.ts persists to localStorage). Screenshot check with Playwright against `npx vite preview`.

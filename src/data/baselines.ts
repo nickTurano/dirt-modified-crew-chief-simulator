@@ -101,3 +101,15 @@ export const SLICK_SPRING_PACKAGE: Partial<Setup> = {
 };
 
 export const BASELINES: Setup[] = [LONG_ROD_BASELINE, SHORT_ROD_BASELINE];
+
+// BRP starting holes for each panhard side (pp. 10, 18, 28, 30)
+export const PANHARD_START = {
+  right: { rearPanhardInnerHole: 2, rearPanhardOuterHole: 6 },
+  left: { rearPanhardInnerHole: 1, rearPanhardOuterHole: 2 },
+} as const;
+
+/** The BRP baseline for this rod package and panhard side: what the handling model measures against */
+export function referenceSetup(rearConfig: Setup['rearConfig'], panhardSide: Setup['panhardSide']): Setup {
+  const b = rearConfig === 'short-rod' ? SHORT_ROD_BASELINE : LONG_ROD_BASELINE;
+  return b.panhardSide === panhardSide ? b : { ...b, panhardSide, ...PANHARD_START[panhardSide] };
+}

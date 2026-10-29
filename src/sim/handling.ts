@@ -2,7 +2,7 @@ import type { Corner, Fault, Phase, Setup, TrackState } from './types';
 import { PHASES } from './types';
 import { readScales, type ScaleReading } from './scales';
 import { gripLevel } from './track';
-import { LONG_ROD_BASELINE, SHORT_ROD_BASELINE } from '../data/baselines';
+import { referenceSetup } from '../data/baselines';
 import { bushingById, shockById, tireById } from '../data/parts';
 
 // The handling model. Each effect turns one part of the setup into a signed deviation from a
@@ -272,10 +272,9 @@ const FAULTS: Record<Fault, { phases: Coeffs; front?: number; side?: number; for
   'rear-end-hitting-seat': { label: 'Rear end hitting the seat plate', phases: [0, -0.04, -0.08, -0.06], forward: -0.04, erratic: 0.1 },
 };
 
-const baselineFor = (s: Setup) => (s.rearConfig === 'short-rod' ? SHORT_ROD_BASELINE : LONG_ROD_BASELINE);
 
 export function analyzeHandling(s: Setup, t: TrackState, faults: Fault[] = []): HandlingResult {
-  const base = baselineFor(s);
+  const base = referenceSetup(s.rearConfig, s.panhardSide);
   const g = gripLevel(t);
   const c: Ctx = {
     s,
