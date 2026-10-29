@@ -1,6 +1,7 @@
 import { useSandbox, type Tab } from './store';
 import { Sandbox } from './Sandbox';
 import { RaceNight } from './RaceNight';
+import { Drills } from './Drills';
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'garage', label: 'Sandbox' },
@@ -31,7 +32,8 @@ export function App() {
       <main>
         {tab === 'garage' && <Sandbox />}
         {tab === 'race' && <RaceNight />}
-        {tab !== 'garage' && tab !== 'race' && <p className="panel">Coming in a later build stage.</p>}
+        {tab === 'drills' && <Drills />}
+        {(tab === 'notebook' || tab === 'help') && <p className="panel">Coming in a later build stage.</p>}
       </main>
     </div>
   );

@@ -19,7 +19,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 6. Track evolution
 - [x] 7. Sandbox UI
 - [x] 8. Race night
-- [ ] 9. Drills
+- [x] 9. Drills
 - [ ] 10. Polish
 
 ## Notes for the next session
@@ -34,3 +34,4 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - Track evolution: src/sim/evolution.ts (weather presets, advanceTrack by car-laps + minutes, crewPrep, trackReport).
 - UI: src/ui (zustand store in store.ts persists to localStorage). Screenshot check with Playwright against `npx vite preview`.
 - Race night: src/sim/raceNight.ts (pure engine, seeded), UI src/ui/RaceNight.tsx + raceStore.ts. Untouched BRP baseline tends to win heats and fade in the feature as it slicks off.
+- Drills: src/data/drills.ts (20 drills). drills.test.ts checks every option with a setup change against the model. Add drills there; no code needed.

@@ -131,3 +131,23 @@ main { padding: 16px; }
 .result-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: 14px; }
 .headline { font-size: 18px; font-weight: 600; margin: 4px 0; }
 h3 { font-size: 14px; margin: 14px 0 6px; }
+
+.drills { display: grid; grid-template-columns: minmax(240px, 320px) minmax(0, 760px); gap: 16px; align-items: start; }
+@media (max-width: 720px) { .drills { grid-template-columns: 1fr; } .drill { order: -1; } }
+.drill-list ul { list-style: none; padding: 0; margin: 0 0 8px; }
+.drill-list h3 { margin: 10px 0 4px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.link { border: none; background: none; padding: 4px 6px; text-align: left; width: 100%; display: flex; gap: 8px; align-items: center; border-radius: 6px; }
+.link.on { background: var(--accent-soft); }
+.dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--muted); flex: none; }
+.dot.best { background: #15803d; border-color: #15803d; }
+.dot.acceptable { background: #ca8a04; border-color: #ca8a04; }
+.dot.wrong, .dot.no-effect { background: var(--warn); border-color: var(--warn); }
+.drill p { line-height: 1.5; }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.option { text-align: left; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+.option:disabled { opacity: 1; cursor: default; }
+.option.best { border-color: #15803d; }
+.option.acceptable { border-color: #ca8a04; }
+.option.wrong, .option.no-effect { border-color: var(--line); color: var(--muted); }
+.option.picked { box-shadow: 0 0 0 2px var(--ink) inset; }
+.verdict { font-size: 13px; color: var(--ink); }
