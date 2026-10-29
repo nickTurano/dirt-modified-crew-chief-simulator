@@ -18,7 +18,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - [x] 5. Lap time + driver feedback
 - [x] 6. Track evolution
 - [x] 7. Sandbox UI
-- [ ] 8. Race night
+- [x] 8. Race night
 - [ ] 9. Drills
 - [ ] 10. Polish
 
@@ -33,3 +33,4 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 - Lap time: src/sim/laptime.ts, driver talk: src/sim/driver.ts. The BRP baseline goes loose as the track slicks off (by design: the trainee has to react).
 - Track evolution: src/sim/evolution.ts (weather presets, advanceTrack by car-laps + minutes, crewPrep, trackReport).
 - UI: src/ui (zustand store in store.ts persists to localStorage). Screenshot check with Playwright against `npx vite preview`.
+- Race night: src/sim/raceNight.ts (pure engine, seeded), UI src/ui/RaceNight.tsx + raceStore.ts. Untouched BRP baseline tends to win heats and fade in the feature as it slicks off.
