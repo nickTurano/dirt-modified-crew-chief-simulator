@@ -13,7 +13,7 @@ Plan: https://claude.ai/artifact/PbCmA7Ma7ZeGcSSpN3EF14 · Manual notes: docs/ma
 ## Stages
 - [x] 1. Scaffold (Vite + React + TS, Vitest)
 - [x] 2. Car data (adjustment catalog, parts, baselines, rules, tracks)
-- [ ] 3. Scales math
+- [x] 3. Scales math
 - [ ] 4. Handling model + manual rule tests
 - [ ] 5. Lap time + driver feedback
 - [ ] 6. Track evolution
